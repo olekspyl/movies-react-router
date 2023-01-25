@@ -11,7 +11,6 @@ import Movies from './pages/Movies';
   return (
     <div>
       <Header />
-   
     <Routes>
         <Route path='/' element={<Home />}>
           <Route path='/movies' element={<Movies />}></Route>

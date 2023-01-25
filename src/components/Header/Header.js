@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavItem, HeaderContainer } from "components/App.styled";
 
 const headerItems =[
     { href: 'home', text: 'Home' },
@@ -8,11 +8,11 @@ const headerItems =[
 
 const Header = () => {
     return (
-        <div>
+        <HeaderContainer>
             {headerItems.map(({ href, text }) => {
-             return <Link to={href} key={href}>{text}</Link>
+             return < NavItem to={href} key={href}>{text}</ NavItem>
             })}
-        </div>
+        </HeaderContainer>
     )
 };
 
