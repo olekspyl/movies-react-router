@@ -7,16 +7,19 @@ import { FormContainer, Button, Input } from "components/App.styled";
 
 const Movies = () => {
     const [query, setQuery] = useState('');
+    const [submit, setSubmit] = useState(false);
+    const [movies, setMovies] = useState([]);
 
     useEffect(() => {
+        if (submit) { 
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=542013762b3531b404b15130444dfd0b&query=${query}`).then(
-            response => console.log(response.data.results)
+            response => setMovies(response.data)
         ).catch(error => console.log(error));
-    }, [query]);
+        } 
+        
+        
+    }, [query, submit, movies]);
 
-    //  if (!query) {
-    //     return;
-    // }
 
     const onQueryChange = e => {
         setQuery(e.target.value);
@@ -26,17 +29,15 @@ const Movies = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-
-
-
-        setQuery('');
+        setSubmit(true);
+        console.log(movies)
     }
 
 
 
     return (
     <FormContainer>
-        <form onSubmit={onSubmit}>
+        <form >
             <label>
                     <Input type="text"
                         value={query}
@@ -44,7 +45,7 @@ const Movies = () => {
                 </Input>
             </label>
         </form>
-        <Button type="button">Search</Button>
+        <Button type="button" onClick={onSubmit}>Search</Button>
         <Outlet /> 
     </FormContainer>
     )
