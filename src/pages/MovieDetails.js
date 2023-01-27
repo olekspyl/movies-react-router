@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
 import axios from "axios";
 import { MovieContainer, MoviePoster, Score, Title, OverviewTitle, Overview, GenresTitle, GenresList, AdditionalInfo, GenresItem, CastLink, ReviewsLink } from "components/App.styled";
 
@@ -25,7 +25,7 @@ const MovieDetails = () => {
     const getPosterURL = (posterPath) => {
         return `https://www.themoviedb.org/t/p/w300_and_h450_bestv2${posterPath}`
     }
-   
+
     
     const allGenres = genres.map(genre =>
         <GenresItem key={genre.id}>{genre.name}</GenresItem>);
@@ -45,8 +45,9 @@ const MovieDetails = () => {
                 <GenresTitle>Genres</GenresTitle>
                 <GenresList>{allGenres}</GenresList>
             <AdditionalInfo>Additional information</AdditionalInfo>
-                <CastLink>Cast</CastLink>
-                <ReviewsLink>Reviews</ReviewsLink>                
+                <CastLink to={`/movies/${movieId}/cast`}>Cast</CastLink>
+                <ReviewsLink to={`/movies/${movieId}/reviews`}>Reviews</ReviewsLink>
+                <Outlet/>
                     </div>
         </MovieContainer>
     )

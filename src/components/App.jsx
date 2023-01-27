@@ -5,14 +5,13 @@ import Reviews from '../pages/Reviews';
 import Cast from '../pages/Cast';
 import MovieDetails from '../pages/MovieDetails';
 import Home from '../pages/Home';
-import NotFound from 'pages/NotFound';
 import Movies from 'pages/Movies';
 
  const App = () => {
   return (
     <div>
       <Header />
-    <Routes>
+      <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/movies' element={<Movies/>}>
           <Route path='/movies/:movieId' element={<MovieDetails />}>
@@ -21,7 +20,7 @@ import Movies from 'pages/Movies';
           </Route>
           </Route>
           
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<Home />} />
       </Routes>
        </div>
   );
