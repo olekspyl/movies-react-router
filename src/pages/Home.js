@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { MoviesList, Movie, MovieLink } from "components/App.styled";
-import { Outlet } from "react-router-dom";
 
 
-
-const Movies = () => {
+const Home = () => {
 
     const [popularMovies, setPopularMovies] = useState([]);
   
@@ -16,14 +14,12 @@ const Movies = () => {
 
 
     return (
-        <MoviesList>{popularMovies.map(({ id, title }) =>
-            <Movie key={id} ><MovieLink  to={`${id}`}>{title}</MovieLink></Movie>
+            <MoviesList>{popularMovies.map(({ id, title }) =>
+            <Movie key={id} ><MovieLink  to={`/movies/${id}`}>{title}</MovieLink></Movie>
         )}
-        <Outlet/>
+       
         </MoviesList>
-        
-      
     )
 };
 
-export default Movies;
+export default Home;

@@ -46,9 +46,7 @@ const MovieDetails = () => {
                 <GenresList>{allGenres}</GenresList>
             <AdditionalInfo>Additional information</AdditionalInfo>
                 <CastLink>Cast</CastLink>
-                <ReviewsLink>Reviews</ReviewsLink>
-
-                
+                <ReviewsLink>Reviews</ReviewsLink>                
                     </div>
         </MovieContainer>
     )
