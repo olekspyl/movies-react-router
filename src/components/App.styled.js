@@ -204,6 +204,7 @@ margin-left: 20px;
 export const Input = styled.input`
 margin-left: 20px;
 width: 200px;
+font-size: 18px;
 height: 30px;
 box-shadow:
             0px 3px 1px rgba(0, 0, 0, 0.1),

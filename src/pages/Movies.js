@@ -2,6 +2,7 @@ import { Outlet, useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FormContainer, Button, Input } from "components/App.styled";
+import MovieList from "components/MovieList";
 
 const Movies = () => {
     const [query, setQuery] = useState('');
@@ -17,7 +18,6 @@ const Movies = () => {
         ).catch(error => console.log(error));
         } 
         setSubmit(false);
-        
     }, [query, submit]);
     
 
@@ -38,11 +38,9 @@ const Movies = () => {
         console.log(movies)
     }
 
-
-    if (!movieId) {
     return (
-        
-    <FormContainer>
+        <div>
+    {!movieId ? (<FormContainer>
         <form onSubmit={onSubmit}>
             <label>
                     <Input type="text"
@@ -53,11 +51,32 @@ const Movies = () => {
         </form>
         <Button type="button" onClick={onHandleClick}>Search</Button>
          
-    </FormContainer>
+    </FormContainer>) 
+                : <Outlet />}
+            {movies && <MovieList movies={movies} />}
+            </div>
     )
-    } else {
-        return <Outlet />
-}
+    
+
+//     if (!movieId) {
+//     return (
+        
+//     <FormContainer>
+//         <form onSubmit={onSubmit}>
+//             <label>
+//                     <Input type="text"
+//                         value={query}
+//                         onChange={onQueryChange}>
+//                 </Input>
+//             </label>
+//         </form>
+//         <Button type="button" onClick={onHandleClick}>Search</Button>
+         
+//     </FormContainer>
+//     )
+//     } else {
+//         return <Outlet />
+// }
     
 }
 
