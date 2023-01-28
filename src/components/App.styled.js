@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
@@ -210,4 +210,13 @@ box-shadow:
             0px 3px 1px rgba(0, 0, 0, 0.1),
             0px 1px 2px rgba(0, 0, 0, 0.08),
             0px 2px 2px rgba(0, 0, 0, 0.12);
+`
+export const ButtonBack = styled.button`
+margin-top: 20px;
+margin-left: 20px;
+`
+
+export const LinkBack = styled(Link)`
+color: black;
+text-decoration: none; 
 `
