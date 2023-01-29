@@ -12,7 +12,7 @@ import Header from './Header';
 
 
 const Home = lazy(() => import('../pages/Home'));
-const Movies = lazy(() => import('../pages/Movies'));
+const Movies = lazy(() => import('pages/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews'));

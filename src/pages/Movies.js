@@ -10,6 +10,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
 
     const { movieId } = useParams();
+    // eslint-disable-next-line
     const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
