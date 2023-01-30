@@ -1,7 +1,8 @@
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { CastList, CastItem, CastName} from "components/App.styled";
+import CastComponent from "components/CastComponent";
+import { CastList} from "components/App.styled";
 
 const Cast = () => {
     const [casts, setCasts] = useState(null);
@@ -19,25 +20,11 @@ useEffect(() => {
         return;
     }
 
-     const getCastFaceURL = (profile_path) => {
-        return `https://www.themoviedb.org/t/p/w66_and_h66_face${profile_path}`
-    }
-  
-    const unpackedCasts = () => casts.map(cast => {
-        return <CastItem key={cast.id}>
-                <img src={getCastFaceURL(cast.profile_path)} alt={cast.name} />
-                <CastName>{cast.name}</CastName>
-                <p>as {cast.character}</p>
-            </CastItem>
-    
-    });
- 
-return (
-    <CastList>
-        {unpackedCasts()}
+    return (
+        <CastList>
+            <CastComponent casts={casts} />
         </CastList>
-        
-    )
+    );
 };
 
 export default Cast;

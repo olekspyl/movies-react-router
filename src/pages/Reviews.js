@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ReviewAuthor, ReviewItem } from "components/App.styled";
+import ReviewsComponent from "components/ReviewsComponent";
 
 
 const Reviews = () => {
@@ -18,24 +18,11 @@ const Reviews = () => {
  
       if (!reviews) {
            return; 
-    } 
-
-    const unpackedReviews = () => reviews.map(review => {
-            return <ul key={review.id}>
-                <ReviewItem>
-                    <ReviewAuthor>{review.author}</ReviewAuthor>
-                    <p>{review.content}</p>
-                </ReviewItem>
-            </ul>
-       
-    }); 
-
+    }; 
   
- 
-        
     return (
         <div>
-            {reviews ? (<p>Sorry, there is no review for this movie</p>) : unpackedReviews()}
+            {reviews ? (<p>Sorry, there is no review for this movie</p>) : <ReviewsComponent reviews={reviews} />}
     </div>
         
         
