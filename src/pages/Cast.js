@@ -19,7 +19,8 @@ useEffect(() => {
     if (!casts) {
         return;
     }
-
+    console.log(casts)
+    
     return (
         <CastList>
             <CastComponent casts={casts} />

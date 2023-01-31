@@ -1,4 +1,4 @@
-import { MoviesList, MovieLink, Movie} from "components/App.styled";
+import { MoviesList} from "components/App.styled";
 import MovieComponent from "components/MovieComponent";
 
 
