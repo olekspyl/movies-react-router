@@ -27,7 +27,7 @@ const MovieDetails = () => {
     return (      
         <>
         <ButtonBackComponent location={location } />
-        <MovieComponent movie={movie}/>
+            <MovieComponent movie={movie} />
         <Outlet/>
      </>
     );

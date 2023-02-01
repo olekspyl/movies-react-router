@@ -1,20 +1,15 @@
-import { MoviesList} from "components/App.styled";
-import MovieComponent from "components/MovieComponent";
+import { MovieLink, Movie, MoviesList } from "components/App.styled";
+// import MovieComponent from "components/MovieComponent";
 
 
 const MovieList = ({ movies }) => {
 
-
     return (
-        <MoviesList>
-            {movies.map(({id}) => {
-                return <MovieComponent
-                    key={id}/>
-            }
-             
-                )
-            }
-    </MoviesList>
+        <MoviesList>{ movies.map(({ id, title }) =>
+        <Movie key={id} ><MovieLink  to={`/movies/${id}`}>{title}</MovieLink></Movie>
+        )}
+            
+        </MoviesList>
 )}
 
 export default MovieList;

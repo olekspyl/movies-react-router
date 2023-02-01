@@ -45,7 +45,7 @@ return (
         {!movieId
             ? <InputComponent onQueryChange={onQueryChange} onHandleClick={onHandleClick} onSubmit={onSubmit} query={query} />
             : <Outlet />}
-        {movies && <MovieList movies={movies} />}
+        <MovieList movies={movies} />
 
         
     </div>
