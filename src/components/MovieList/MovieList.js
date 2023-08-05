@@ -13,13 +13,3 @@ const MovieList = ({ movies }) => {
 )}
 
 export default MovieList;
-
-//  return (
-//         <MoviesList>
-//             {movies.map(({id, title}) => {
-//                 return <Movie key={id}>
-//                      <MovieLink to={`/movies/${id}`}>{title}</MovieLink></Movie>
-//             })}
-//     </MoviesList>
-// )
- 

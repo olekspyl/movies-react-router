@@ -11,7 +11,7 @@ const Reviews = lazy(() => import('../pages/Reviews'));
 
 
 
-const App = () => {
+ const App = () => {
   return (
     <div>
       <Header />
@@ -31,4 +31,3 @@ const App = () => {
 };
 
 export default App;
-

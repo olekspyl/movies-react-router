@@ -12,7 +12,6 @@ const Movies = () => {
     // eslint-disable-next-line
     const [searchParams, setSearchParams] = useSearchParams();
 
-
     useEffect(() => {
         if (submit) {
             axios.get(`https://api.themoviedb.org/3/search/movie?api_key=542013762b3531b404b15130444dfd0b&query=${query}`).then(
