@@ -1,7 +1,7 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-// import { Header } from 'components/header';
-// import { Container } from 'components/container';
+import { Blocks } from '../loader';
 
 export const SharedLayout = () => {
   return (
@@ -9,10 +9,12 @@ export const SharedLayout = () => {
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
+          <NavLink to="/movies">Find movie</NavLink>
         </nav>
       </header>
-      <Outlet />
+      <Suspense fallback={<Blocks></Blocks>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

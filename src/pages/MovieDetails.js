@@ -1,3 +1,7 @@
-export const MovieDetails = () => {
-  return <div>details</div>;
+import { Movie } from 'components/movie';
+
+const MovieDetails = () => {
+  return <Movie></Movie>;
 };
+
+export default MovieDetails;

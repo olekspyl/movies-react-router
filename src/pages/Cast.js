@@ -1,3 +1,5 @@
-export const Cast = () => {
+const Cast = () => {
   return <div></div>;
 };
+
+export default Cast;

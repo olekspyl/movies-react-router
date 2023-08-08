@@ -1,3 +1,5 @@
-export const Reviews = () => {
+const Reviews = () => {
   return <div>reviews</div>;
 };
+
+export default Reviews;
