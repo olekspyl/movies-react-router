@@ -5,7 +5,7 @@ import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/3/movie';
 const controller = new AbortController();
 
-export const fetchCast = movieId => {
+export const fetchReviews = movieId => {
   const options = {
     method: 'GET',
     signal: controller.signal,
@@ -15,7 +15,7 @@ export const fetchCast = movieId => {
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMjJiNzJmYjVjMzA4NjE0M2E3YzJkNWFjNWExODZlMSIsInN1YiI6IjYzZDA0ZjY2YjdhMTU0MDUxY2U2M2EyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.C70BBZoOTjJ3qB7SKuvutphznTOIeAE5e39_YH9TUqY',
     },
   };
-  const resp = axios.get(`${BASE_URL}/${movieId}/credits`, options);
+  const resp = axios.get(`${BASE_URL}/${movieId}/reviews`, options);
 
   return resp;
 };

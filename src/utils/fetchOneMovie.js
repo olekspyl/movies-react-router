@@ -3,10 +3,12 @@ import axios from 'axios';
 // const API_KEY = '022b72fb5c3086143a7c2d5ac5a186e1';
 // axios.defaults.baseURL = 'https://api.themoviedb.org/3/movie';
 const BASE_URL = 'https://api.themoviedb.org/3/movie';
+const controller = new AbortController();
 
 export const fetchOneMovie = movieId => {
   const options = {
     method: 'GET',
+    signal: controller.signal,
     headers: {
       accept: 'application/json',
       Authorization:

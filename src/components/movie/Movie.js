@@ -11,7 +11,6 @@ export const Movie = ({
     id,
   },
 }) => {
-  // eslint-disable-next-line
   const userScore = Math.round(vote_average * 10);
   const genresNames = genres.map(genre => <li key={genre.id}>{genre.name}</li>);
   const getPosterURL = posterPath => {

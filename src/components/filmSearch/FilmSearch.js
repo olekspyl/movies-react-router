@@ -1,16 +1,14 @@
-export const FilmSearch = ({
-  handleChange,
-  handleClick,
-  handleSubmit,
-  query,
-}) => {
+export const FilmSearch = ({ handleChange, handleSubmit, query }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange}></input>
-        <button type="button" onClick={handleClick}>
-          Search
-        </button>
+        <input
+          type="text"
+          onChange={handleChange}
+          value={query}
+          name="movie"
+        ></input>
+        <button type="submit">Search</button>
       </form>
     </div>
   );

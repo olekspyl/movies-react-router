@@ -12,6 +12,7 @@ const Home = () => {
   }, []);
 
   const getMoviesList = async () => {
+    const controller = new AbortController();
     setIsLoading(true);
     try {
       const { data } = await fetchMovies();
@@ -20,6 +21,7 @@ const Home = () => {
       console.log(error.message);
     } finally {
       setIsLoading(false);
+      controller.abort();
     }
   };
 
