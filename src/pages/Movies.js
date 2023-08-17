@@ -14,7 +14,7 @@ const Movies = () => {
 
     useEffect(() => {
         if (submit) {
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=542013762b3531b404b15130444dfd0b&query=${query}`).then(
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=022b72fb5c3086143a7c2d5ac5a186e1&query=${query}`).then(
                 response => setMovies(response.data.results)
             ).catch(error => console.log(error)).finally(<p> Sorry, try another query</p>);
             setSubmit(false);

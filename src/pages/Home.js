@@ -8,7 +8,7 @@ const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
   
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=542013762b3531b404b15130444dfd0b`).then(response => 
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=022b72fb5c3086143a7c2d5ac5a186e1`).then(response => 
         setPopularMovies(response.data.results)).catch(error => console.log(error))
         }, [])
 

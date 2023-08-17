@@ -12,7 +12,7 @@ const MovieDetails = () => {
  
     
     useEffect(() => {
-        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=542013762b3531b404b15130444dfd0b`).then(
+        axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=022b72fb5c3086143a7c2d5ac5a186e1`).then(
             response => setMovie(response.data)
         ).catch(error => console.log(error));
     }, [movieId]);
